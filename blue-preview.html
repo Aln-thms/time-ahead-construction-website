@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Time Ahead Constructions</title>
+<style>
+/* ============================================================
+   Time Ahead Constructions — Refined Theme v2
+   Softer, more premium industrial aesthetic
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  /* Deep navy blues */
+  --navy:     #0b1f3a;
+  --navy-mid: #102647;
+  --steel:    #1a3a5c;
+  --slate:    #1e4470;
+
+  /* Accent — bright yellow/gold */
+  --accent:   #f5c518;
+  --accent2:  #d4a800;
+  --accent-light: rgba(245,197,24,0.12);
+
+  /* Neutrals — cool white/light blue-grey */
+  --bg:       #f0f4f8;
+  --surface:  #ffffff;
+  --border:   #d8e3ee;
+  --text:     #0f1e2e;
+  --muted:    #4a6080;
+  --soft:     #7a96b0;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow:    0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
+
+  --radius:   8px;
+  --radius-lg: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.18s; }
+a:hover { color: var(--accent2); }
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* ---- Utility ---- */
+.container { max-width: 1160px; margin: auto; padding: 0 28px; }
+.section    { padding: 88px 0; }
+.section-alt { background: var(--surface); }
+
+/* ---- Tags / Badges ---- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid rgba(245,197,24,0.22);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  transition: all 0.22s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(245,197,24,0.28);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,197,24,0.38);
+  color: white;
+}
+.btn-outline {
+  background: rgba(255,255,255,0.10);
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px);
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.55);
+  color: white;
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--border);
+  padding: 11px 24px;
+}
+.btn-ghost:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---- Grids ---- */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 22px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  background: rgba(7,21,38,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 66px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(245,197,24,0.30);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.65);
+  padding: 7px 13px;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: all 0.18s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-links .nav-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  margin-left: 8px;
+  box-shadow: 0 3px 10px rgba(245,197,24,0.28);
+}
+.nav-links .nav-cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  background: linear-gradient(150deg, #071526 0%, #0b1f3a 50%, #0f2d55 100%);
+  color: white;
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+/* Subtle geometric texture */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(245,197,24,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(26,58,92,0.5) 0%, transparent 50%);
+}
+
+/* Subtle grid lines */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,136,58,0.12);
+  border: 1px solid rgba(245,197,24,0.25);
+  color: #f0a860;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  max-width: 700px;
+  color: white;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(90deg, #ffe066, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.62);
+  max-width: 520px;
+  margin-bottom: 38px;
+  line-height: 1.75;
+}
+
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 120px;
+  padding-right: 40px;
+  position: relative;
+}
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.stat-item h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffe066, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-item p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.48);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 4px 0 0;
+  font-weight: 500;
+}
+
+/* ============================================================
+   STRIP
+   ============================================================ */
+.highlight-strip {
+  background: #071526;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 18px 0;
+}
+
+.strip-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+.strip-item span { font-size: 1rem; }
+
+/* ============================================================
+   SECTION TITLES
+   ============================================================ */
+.section-title {
+  margin-bottom: 52px;
+}
+.section-title h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--navy);
+  margin-top: 10px;
+  font-weight: 700;
+}
+.section-title p {
+  color: var(--muted);
+  max-width: 540px;
+  margin-top: 14px;
+  font-size: 0.96rem;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(245,197,24,0.20);
+}
+
+.card-body { padding: 28px 26px; }
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  border: 1px solid rgba(245,197,24,0.18);
+}
+
+.card h3 {
+  font-size: 1.12rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 18px;
+}
+.card-link::after { content: '→'; transition: transform 0.18s; }
+.card:hover .card-link::after { transform: translateX(4px); }
+
+/* ============================================================
+   PAGE HERO (inner pages)
+   ============================================================ */
+.page-hero {
+  background: linear-gradient(150deg, #071526 0%, #0b1f3a 60%, #1a3a5c 100%);
+  color: white;
+  padding: 72px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 80%, rgba(212,136,58,0.05) 0%, transparent 40%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: auto, 60px 60px, 60px 60px;
+}
+
+.page-hero .container { position: relative; z-index: 1; }
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+.breadcrumb a { color: rgba(255,255,255,0.4); }
+.breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+.breadcrumb span { color: rgba(212,136,58,0.9); }
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+.page-hero p {
+  color: rgba(255,255,255,0.58);
+  font-size: 1rem;
+  max-width: 540px;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   SERVICE DETAIL
+   ============================================================ */
+.service-detail { padding: 80px 0; }
+.service-content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 52px;
+  align-items: start;
+}
+
+.service-body h2 {
+  font-size: 1.7rem;
+  color: var(--navy);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+.service-body p { color: var(--muted); margin-bottom: 16px; font-size: 0.95rem; }
+
+.checklist { list-style: none; margin: 24px 0; }
+.checklist li {
+  padding: 12px 0 12px 32px;
+  position: relative;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.93rem;
+}
+.checklist li:first-child { border-top: 1px solid var(--border); }
+.checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.service-sidebar {
+  background: #0b1f3a;
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  position: sticky;
+  top: 90px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.service-sidebar h3 {
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.service-sidebar ul { list-style: none; }
+.service-sidebar ul li {
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+}
+.service-sidebar ul li:last-child { border-bottom: none; }
+.sidebar-cta {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--radius);
+  margin-top: 24px;
+  font-weight: 600;
+  display: block;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(245,197,24,0.25);
+}
+.sidebar-cta:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 8px 24px rgba(245,197,24,0.35);
+}
+
+/* ============================================================
+   PROJECT CARDS
+   ============================================================ */
+.project-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(245,197,24,0.20);
+}
+
+.project-card-top {
+  background: linear-gradient(135deg, #071526 0%, #1a3a5c 100%);
+  padding: 36px 28px 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.project-card-top::before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+
+.proj-tag {
+  display: inline-block;
+  background: rgba(245,197,24,0.20);
+  color: #f0a860;
+  border: 1px solid rgba(245,197,24,0.28);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.project-card-top h3 { font-size: 1.25rem; font-weight: 700; }
+.project-card-bottom { padding: 24px 28px; }
+.project-card-bottom p { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
+
+.project-meta { display: flex; gap: 18px; flex-wrap: wrap; }
+.project-meta span {
+  font-size: 0.8rem;
+  color: var(--soft);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.project-meta span strong { color: var(--navy); font-weight: 600; }
+
+/* ============================================================
+   SAFETY BADGES
+   ============================================================ */
+.safety-badge {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all 0.22s;
+}
+.safety-badge:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,197,24,0.20);
+  box-shadow: var(--shadow);
+}
+.safety-badge .badge-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  filter: grayscale(0.1);
+}
+.safety-badge h3 { font-size: 0.98rem; color: var(--navy); margin-bottom: 8px; font-weight: 700; }
+.safety-badge p  { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+
+/* ============================================================
+   TEAM
+   ============================================================ */
+.team-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.22s;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(245,197,24,0.20);
+}
+.team-card-top {
+  background: linear-gradient(150deg, #222426 0%, #363a3d 100%);
+  padding: 36px 20px 20px;
+  position: relative;
+}
+.team-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(245,197,24,0.30);
+  border: 3px solid rgba(255,255,255,0.12);
+}
+
+/* Shimmer placeholder for team photo not yet added */
+.team-avatar-placeholder {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 3px solid rgba(255,255,255,0.10);
+  background: linear-gradient(110deg, rgba(255,255,255,0.05) 30%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.05) 70%);
+  background-size: 200% 100%;
+  animation: shimmer-dark 1.8s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.team-avatar-placeholder span {
+  font-size: 1.4rem;
+  opacity: 0.4;
+}
+.team-avatar-placeholder small {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: 'Barlow', sans-serif;
+}
+.team-card-body { padding: 20px 20px 24px; }
+.team-card-body h3 { font-size: 1.05rem; color: var(--navy); font-weight: 700; }
+.team-card-body .role {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 5px;
+}
+.team-card-body p { font-size: 0.85rem; color: var(--muted); margin-top: 12px; line-height: 1.65; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+
+.contact-info h2 { font-size: 2rem; color: var(--navy); margin-bottom: 14px; font-weight: 800; }
+.contact-info > p { color: var(--muted); margin-bottom: 32px; font-size: 0.95rem; }
+
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding: 18px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: border-color 0.18s;
+}
+.contact-item:hover { border-color: rgba(245,197,24,0.22); }
+
+.contact-item-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(245,197,24,0.18);
+}
+.contact-item-text h4 {
+  font-size: 0.72rem;
+  color: var(--soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-family: 'Inter', sans-serif;
+}
+.contact-item-text p,
+.contact-item-text a { color: var(--navy); font-weight: 600; font-size: 0.92rem; }
+
+.contact-form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 36px;
+}
+.contact-form h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 26px; font-weight: 800; }
+
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 15px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: all 0.18s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(212,136,58,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band {
+  background: linear-gradient(135deg, #071526 0%, #0b1f3a 50%, #0f2d55 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(212,136,58,0.07) 0%, transparent 60%);
+}
+.cta-band .container { position: relative; z-index: 1; }
+
+.cta-band h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 14px; font-weight: 800; }
+.cta-band p  { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #071526;
+  color: rgba(255,255,255,0.6);
+  padding: 64px 0 28px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 52px;
+  margin-bottom: 52px;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-top: 16px;
+  max-width: 260px;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer-col h4 {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.86rem;
+  transition: color 0.18s;
+}
+.footer-col ul li a:hover { color: rgba(212,136,58,0.85); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.accreditations { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.acc-badge {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .service-content  { grid-template-columns: 1fr; }
+  .contact-grid     { grid-template-columns: 1fr; }
+  .footer-grid      { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .nav-links        { display: none; }
+  .footer-grid      { grid-template-columns: 1fr; }
+  .form-row         { grid-template-columns: 1fr; }
+  .hero-stats       { gap: 24px; }
+  .stat-item::after { display: none; }
+  .hero             { padding: 80px 0 70px; }
+}
+
+/* ============================================================
+   LOGO — image + company name side by side
+   ============================================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-shimmer {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: linear-gradient(110deg,rgba(255,255,255,.06) 30%,rgba(255,255,255,.13) 50%,rgba(255,255,255,.06) 70%);
+  background-size: 200% 100%;
+  animation: shimmer-dark 1.8s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.logo-name {
+  color: white;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.footer-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+}
+
+.footer-logo-img {
+  height: 36px;
+}
+
+/* ============================================================
+   TEAM CARD — real photo with shimmer fallback
+   ============================================================ */
+.team-card-top {
+  background: linear-gradient(150deg,#071526 0%,#1a3a5c 100%);
+  padding: 36px 20px 20px;
+  position: relative;
+}
+
+.team-avatar-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 2px rgba(245,197,24,0.28);
+  display: block;
+  margin: 0 auto;
+  background: #333;
+  transition: transform .22s, box-shadow .22s;
+}
+.team-card:hover .team-avatar-img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 0 3px rgba(245,197,24,0.42);
+}
+
+.team-avatar-placeholder {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 3px solid rgba(255,255,255,0.10);
+  background: linear-gradient(110deg,rgba(255,255,255,.05) 30%,rgba(255,255,255,.11) 50%,rgba(255,255,255,.05) 70%);
+  background-size: 200% 100%;
+  animation: shimmer-dark 1.8s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.team-avatar-placeholder span { font-size: 1.4rem; opacity: .4; }
+.team-avatar-placeholder small { font-size: .6rem; color: rgba(255,255,255,.25); text-transform:uppercase; letter-spacing:.06em; font-family:'Barlow',sans-serif; }
+
+/* ============================================================
+   PROJECT MODAL
+   ============================================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.modal-overlay.open { display: flex; animation: fadeIn .22s ease; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(0,0,0,.45);
+  animation: slideUp .28s ease;
+}
+@keyframes slideUp { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+.modal-close {
+  position: sticky;
+  top: 0; z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 18px 0;
+  background: var(--surface);
+}
+.modal-close button {
+  width:36px; height:36px; border-radius:50%;
+  border:1.5px solid var(--border); background:var(--bg);
+  color:var(--muted); font-size:1.2rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .18s; line-height:1;
+}
+.modal-close button:hover { background:var(--navy); color:white; border-color:var(--navy); }
+
+.modal-hero {
+  background: linear-gradient(135deg,#071526,#1a3a5c);
+  padding: 20px 36px 28px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: -52px;
+}
+.modal-hero::before {
+  content:""; position:absolute; inset:0;
+  background-image:var(--modal-bg-img,none);
+  background-size:cover; background-position:center; opacity:.18;
+}
+.modal-hero > * { position:relative; z-index:1; }
+.modal-hero .proj-tag { margin-bottom:10px; }
+.modal-hero h2 { font-size:clamp(1.4rem,3vw,2rem); font-weight:700; }
+
+.modal-body { padding: 32px 36px; }
+.modal-body h3 { font-size:1.25rem; color:var(--navy); margin:0 0 12px; font-weight:700; }
+.modal-body p  { color:var(--muted); font-size:.93rem; margin-bottom:16px; }
+
+.modal-meta {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px; margin-bottom:28px;
+}
+.modal-meta-item {
+  background:var(--bg); border:1px solid var(--border);
+  border-radius:var(--radius); padding:12px 14px; text-align:center;
+}
+.modal-meta-item .label { font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); font-weight:600; margin-bottom:4px; }
+.modal-meta-item .value { font-size:.98rem; font-weight:700; color:var(--navy); font-family:'Barlow Condensed',sans-serif; }
+
+.modal-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:24px 0; }
+.modal-gallery img,
+.modal-gallery .img-placeholder { width:100%; height:160px; object-fit:cover; border-radius:var(--radius); display:block; }
+
+.modal-footer { display:flex; justify-content:flex-end; padding:0 36px 28px; }
+
+body.modal-open { overflow:hidden; }
+
+@media(max-width:600px){
+  .modal-body,.modal-hero{ padding-left:20px; padding-right:20px; }
+  .modal-gallery{ grid-template-columns:1fr 1fr; }
+  .modal-footer{ padding:0 20px 24px; }
+}
+
+</style>
+</head>
+<body><header>
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <!-- Logo image: replace src when you have your file -->
+        <img src="images/logo.png"
+             alt="Time Ahead Constructions"
+             class="logo-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <!-- Shimmer shown until logo.png is added -->
+        <div class="logo-shimmer" style="display:none;">&#128247;</div>
+        <!-- Company name always visible next to logo -->
+        <span class="logo-name">Time Ahead Constructions</span>
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="safety.html">Safety</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">&#9670; ISO 9001 &nbsp;&bull;&nbsp; OHSAS 18001 &nbsp;&bull;&nbsp; API Compliant</div>
+    <h1>Engineering Excellence in<br><span class="highlight">Oil &amp; Gas</span> Infrastructure</h1>
+    <p>Specialist contractor for piping fabrication, erection, welding, hydrotesting, and plant shutdown maintenance across refineries and petrochemical facilities.</p>
+    <div class="hero-btns">
+      <a href="services.html" class="btn btn-primary">Our Services</a>
+      <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><h3>15+</h3><p>Years of Experience</p></div>
+      <div class="stat-item"><h3>80+</h3><p>Projects Completed</p></div>
+      <div class="stat-item"><h3>Zero</h3><p>LTI Record</p></div>
+      <div class="stat-item"><h3>500+</h3><p>Skilled Workforce</p></div>
+    </div>
+  </div>
+</section>
+<div class="highlight-strip"><div class="container"><div class="strip-inner">
+  <div class="strip-item"><span>&#128297;</span> Piping Fabrication &amp; Erection</div>
+  <div class="strip-item"><span>&#128293;</span> Welding — SMAW / TIG / FCAW</div>
+  <div class="strip-item"><span>&#128167;</span> Hydrotesting &amp; Flushing</div>
+  <div class="strip-item"><span>&#127981;</span> Refinery Shutdown Specialists</div>
+  <div class="strip-item"><span>&#128737;</span> HSE Compliant Operations</div>
+</div></div></div>
+<section class="section">
+  <div class="container">
+    <div class="section-title"><div class="tag">What We Do</div><h2>Core Service Lines</h2><p>End-to-end mechanical and piping solutions for upstream, midstream, and downstream oil &amp; gas operations.</p></div>
+    <div class="grid-3">
+      <div class="card"><div class="card-body"><div class="card-icon">&#128297;</div><h3>Piping Fabrication</h3><p>Precision fabrication of CS, alloy, and SS piping systems to ASME B31.3 in our workshop environment.</p><a href="service-fabrication.html" class="card-link">View Details</a></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#127959;</div><h3>Piping Erection</h3><p>Structural pipe fitting and installation across refinery units, supports, hangers, and field alignment.</p><a href="service-erection.html" class="card-link">View Details</a></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#128293;</div><h3>Welding Services</h3><p>Coded welders executing SMAW, TIG, FCAW with full WPS/PQR documentation and NDT coordination.</p><a href="service-welding.html" class="card-link">View Details</a></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#128167;</div><h3>Hydrotesting</h3><p>Pressure testing and flushing per ASME and client specifications with full test pack documentation.</p><a href="service-hydrotest.html" class="card-link">View Details</a></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#9889;</div><h3>Shutdown Maintenance</h3><p>Rapid-response turnaround and planned shutdown services minimising plant downtime.</p><a href="service-shutdown.html" class="card-link">View Details</a></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#9646;</div><h3>Blinding &amp; Isolation</h3><p>Safe isolation management, blind lists, and insertion/removal during shutdowns with PTW compliance.</p><a href="service-blinding.html" class="card-link">View Details</a></div></div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title"><div class="tag">Why Choose Us</div><h2>Built on Safety, Precision &amp; Reliability</h2></div>
+    <div class="grid-4">
+      <div class="card"><div class="card-body"><div class="card-icon">&#128203;</div><h3>Certified QA/QC</h3><p>Full quality control from raw material traceability to final inspection and handover dossiers.</p></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#128737;</div><h3>Zero-Harm Culture</h3><p>HSE-first approach with toolbox talks, PTW compliance, and ongoing safety audits on every site.</p></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#8987;</div><h3>On-Time Delivery</h3><p>Proven track record of completing shutdown and construction projects within agreed schedules.</p></div></div>
+      <div class="card"><div class="card-body"><div class="card-icon">&#128373;</div><h3>Experienced Workforce</h3><p>Skilled fitters, coded welders, and experienced supervisors with refinery-specific competencies.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-title"><div class="tag">Recent Work</div><h2>Projects Delivered</h2><p>Click any project card to see the full scope, team size, and site photos.</p></div>
+    <div class="grid-2"><div class="project-card" style="cursor:pointer;" onclick="openModal('bpcl')">
+        <div class="project-card-top" style="background-image:url('images/project-bpcl.jpg');">
+          <div class="proj-tag">Shutdown</div>
+          <h3>BPCL Kochi Refinery — Shutdown Package</h3>
+        </div>
+        <div class="project-card-bottom">
+          <p>Full scope piping erection, welding, hydrotesting and blind management during planned turnaround.</p>
+          <div class="project-meta"><span>&#128205; <strong>Kochi, Kerala</strong></span> <span>&#8987; <strong>45 Days</strong></span> <span>&#128373; <strong>120 Workforce</strong></span></div>
+          <span class="card-link" style="margin-top:18px;display:inline-flex;cursor:pointer;">View Project Details</span>
+        </div>
+      </div><div class="project-card" style="cursor:pointer;" onclick="openModal('fabrication')">
+        <div class="project-card-top" style="background-image:url('images/project-fabrication.jpg');">
+          <div class="proj-tag">Fabrication</div>
+          <h3>Petrochemical Plant — Piping Fabrication Package</h3>
+        </div>
+        <div class="project-card-bottom">
+          <p>Workshop fabrication of CS and SS piping spools for a greenfield petrochemical processing unit.</p>
+          <div class="project-meta"><span>&#128205; <strong>Kerala</strong></span> <span>&#8987; <strong>6 Months</strong></span> <span>&#128297; <strong>1,200+ Spools</strong></span></div>
+          <span class="card-link" style="margin-top:18px;display:inline-flex;cursor:pointer;">View Project Details</span>
+        </div>
+      </div><div class="project-card" style="cursor:pointer;" onclick="openModal('erection')">
+        <div class="project-card-top" style="background-image:url('images/project-erection.jpg');">
+          <div class="proj-tag">Erection</div>
+          <h3>Refinery Expansion — Piping Erection</h3>
+        </div>
+        <div class="project-card-bottom">
+          <p>Field erection of process and utility piping for a refinery capacity expansion project.</p>
+          <div class="project-meta"><span>&#128205; <strong>Kerala</strong></span> <span>&#8987; <strong>4 Months</strong></span> <span>&#128373; <strong>80 Workforce</strong></span></div>
+          <span class="card-link" style="margin-top:18px;display:inline-flex;cursor:pointer;">View Project Details</span>
+        </div>
+      </div><div class="project-card" style="cursor:pointer;" onclick="openModal('shutdown')">
+        <div class="project-card-top" style="background-image:url('images/project-shutdown.jpg');">
+          <div class="proj-tag">Maintenance</div>
+          <h3>Annual Shutdown — Multi-Unit Maintenance</h3>
+        </div>
+        <div class="project-card-bottom">
+          <p>Annual turnaround covering piping replacement and corrosion repairs across CDU, VDU, and utility sections.</p>
+          <div class="project-meta"><span>&#128205; <strong>Kerala</strong></span> <span>&#8987; <strong>30 Days</strong></span> <span>&#128373; <strong>60 Workforce</strong></span></div>
+          <span class="card-link" style="margin-top:18px;display:inline-flex;cursor:pointer;">View Project Details</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="cta-band">
+  <div class="container">
+    <h2>Ready to Discuss Your Project?</h2>
+    <p>Whether it is a planned shutdown or a new construction package — we are ready to deliver.</p>
+    <a href="contact.html" class="btn btn-outline">Contact Our Team &rarr;</a>
+  </div>
+</section><footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="images/logo.png"
+               alt="Time Ahead Constructions"
+               class="logo-img footer-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+          <div class="logo-shimmer" style="display:none;width:28px;height:28px;border-radius:6px;"></div>
+          <span class="logo-name" style="color:white;font-size:1.1rem;">Time Ahead Constructions</span>
+        </div>
+        <p>Specialist oil &amp; gas piping contractor delivering safe, quality mechanical works across refineries and petrochemical plants.</p>
+        <div class="accreditations"><div class="acc-badge">ISO 9001</div><div class="acc-badge">OHSAS 18001</div><div class="acc-badge">API</div></div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="service-fabrication.html">Piping Fabrication</a></li>
+        <li><a href="service-erection.html">Piping Erection</a></li>
+        <li><a href="service-welding.html">Welding</a></li>
+        <li><a href="service-hydrotest.html">Hydrotesting</a></li>
+        <li><a href="service-shutdown.html">Shutdown Maintenance</a></li>
+        <li><a href="service-blinding.html">Blinding &amp; Isolation</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="safety.html">Safety</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@timeahead.com">info@timeahead.com</a></li>
+        <li><a href="tel:+910000000000">+91 XXXXX XXXXX</a></li>
+        <li style="color:rgba(255,255,255,0.3);font-size:.85rem;padding-top:4px;">Kerala, India</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Time Ahead Constructions. All rights reserved.</p>
+      <p>Piping Fabrication &middot; Erection &middot; Shutdown Specialists</p>
+    </div>
+  </div>
+</footer>
+<div class="modal-overlay" id="modal-bpcl" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-close"><button onclick="closeModal('bpcl')" aria-label="Close">&times;</button></div>
+    <div class="modal-hero" style="--modal-bg-img:url('images/project-bpcl.jpg');">
+      <div class="proj-tag">Shutdown</div>
+      <h2>BPCL Kochi Refinery — Turnaround Shutdown Package</h2>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta"><div class="modal-meta-item"><div class="label">Client</div><div class="value">BPCL</div></div>
+<div class="modal-meta-item"><div class="label">Location</div><div class="value">Kochi, Kerala</div></div>
+<div class="modal-meta-item"><div class="label">Duration</div><div class="value">45 Days</div></div>
+<div class="modal-meta-item"><div class="label">Workforce</div><div class="value">120</div></div>
+<div class="modal-meta-item"><div class="label">LTI</div><div class="value">Zero</div></div>
+<div class="modal-meta-item"><div class="label">Status</div><div class="value">Completed</div></div></div>
+      <h3>Project Overview</h3>
+      <p>Specialist piping and mechanical contractor for the planned turnaround at BPCL Kochi Refinery. Completed within 45 days with zero lost-time incidents across multiple process units.</p>
+      <h3>Scope of Work</h3>
+      <ul class="checklist"><li>Piping erection and replacement across CDU and VDU sections</li>
+<li>Coded welding — SMAW and TIG — on CS and SS process lines</li>
+<li>Hydraulic pressure testing of reinstated piping systems</li>
+<li>Blind insertion and removal with fully tracked blind list</li>
+<li>Pipe support and hanger rectification works</li>
+<li>Completion of test packs and as-built documentation</li></ul>
+      <div class="modal-gallery"><img src="images/bpcl-site-1.jpg" alt="bpcl-site-1"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>bpcl-site-1.jpg</small></div>'">
+<img src="images/bpcl-site-2.jpg" alt="bpcl-site-2"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>bpcl-site-2.jpg</small></div>'">
+<img src="images/bpcl-site-3.jpg" alt="bpcl-site-3"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>bpcl-site-3.jpg</small></div>'">
+</div>
+    </div>
+    <div class="modal-footer"><a href="contact.html" class="btn btn-primary">Enquire About Similar Work</a></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-fabrication" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-close"><button onclick="closeModal('fabrication')" aria-label="Close">&times;</button></div>
+    <div class="modal-hero" style="--modal-bg-img:url('images/project-fabrication.jpg');">
+      <div class="proj-tag">Fabrication</div>
+      <h2>Petrochemical Plant — Piping Fabrication Package</h2>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta"><div class="modal-meta-item"><div class="label">Location</div><div class="value">Kerala</div></div>
+<div class="modal-meta-item"><div class="label">Duration</div><div class="value">6 Months</div></div>
+<div class="modal-meta-item"><div class="label">Spools</div><div class="value">1,200+</div></div>
+<div class="modal-meta-item"><div class="label">Material</div><div class="value">CS &amp; SS</div></div>
+<div class="modal-meta-item"><div class="label">LTI</div><div class="value">Zero</div></div>
+<div class="modal-meta-item"><div class="label">Status</div><div class="value">Completed</div></div></div>
+      <h3>Project Overview</h3>
+      <p>Workshop fabrication of over 1,200 CS and SS piping spools for a greenfield petrochemical plant. Full QA/QC documentation and third-party inspection throughout.</p>
+      <h3>Scope of Work</h3>
+      <ul class="checklist"><li>Fabrication of CS and SS spools to ASME B31.3</li>
+<li>Full material traceability with MTR records</li>
+<li>Dimensional inspection and fit-up verification</li>
+<li>Coded welding with WPS/PQR documentation</li>
+<li>NDT — radiography and dye penetrant testing</li>
+<li>Third-party inspection and test pack completion</li></ul>
+      <div class="modal-gallery"><img src="images/fabrication-1.jpg" alt="fabrication-1"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>fabrication-1.jpg</small></div>'">
+<img src="images/fabrication-2.jpg" alt="fabrication-2"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>fabrication-2.jpg</small></div>'">
+<img src="images/fabrication-3.jpg" alt="fabrication-3"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>fabrication-3.jpg</small></div>'">
+</div>
+    </div>
+    <div class="modal-footer"><a href="contact.html" class="btn btn-primary">Enquire About Similar Work</a></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-erection" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-close"><button onclick="closeModal('erection')" aria-label="Close">&times;</button></div>
+    <div class="modal-hero" style="--modal-bg-img:url('images/project-erection.jpg');">
+      <div class="proj-tag">Erection</div>
+      <h2>Refinery Expansion — Piping Erection Package</h2>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta"><div class="modal-meta-item"><div class="label">Location</div><div class="value">Kerala</div></div>
+<div class="modal-meta-item"><div class="label">Duration</div><div class="value">4 Months</div></div>
+<div class="modal-meta-item"><div class="label">Workforce</div><div class="value">80</div></div>
+<div class="modal-meta-item"><div class="label">Type</div><div class="value">Erection</div></div>
+<div class="modal-meta-item"><div class="label">LTI</div><div class="value">Zero</div></div>
+<div class="modal-meta-item"><div class="label">Status</div><div class="value">Completed</div></div></div>
+      <h3>Project Overview</h3>
+      <p>Field erection of process and utility piping for a refinery capacity expansion. Included pipe supports, alignment, field joint welding, and hydrotest completion across multiple plant areas.</p>
+      <h3>Scope of Work</h3>
+      <ul class="checklist"><li>Field erection of process and utility piping</li>
+<li>Pipe support and hanger installation</li>
+<li>Field alignment and fit-up across all areas</li>
+<li>Field joint welding — SMAW and TIG</li>
+<li>Hydrotesting and system reinstatement</li>
+<li>Final punch list clearance and handover documentation</li></ul>
+      <div class="modal-gallery"><img src="images/erection-1.jpg" alt="erection-1"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>erection-1.jpg</small></div>'">
+<img src="images/erection-2.jpg" alt="erection-2"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>erection-2.jpg</small></div>'">
+<img src="images/erection-3.jpg" alt="erection-3"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>erection-3.jpg</small></div>'">
+</div>
+    </div>
+    <div class="modal-footer"><a href="contact.html" class="btn btn-primary">Enquire About Similar Work</a></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-shutdown" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-close"><button onclick="closeModal('shutdown')" aria-label="Close">&times;</button></div>
+    <div class="modal-hero" style="--modal-bg-img:url('images/project-shutdown.jpg');">
+      <div class="proj-tag">Maintenance</div>
+      <h2>Annual Shutdown — Multi-Unit Maintenance Package</h2>
+    </div>
+    <div class="modal-body">
+      <div class="modal-meta"><div class="modal-meta-item"><div class="label">Location</div><div class="value">Kerala</div></div>
+<div class="modal-meta-item"><div class="label">Duration</div><div class="value">30 Days</div></div>
+<div class="modal-meta-item"><div class="label">Workforce</div><div class="value">60</div></div>
+<div class="modal-meta-item"><div class="label">Units</div><div class="value">CDU / VDU</div></div>
+<div class="modal-meta-item"><div class="label">LTI</div><div class="value">Zero</div></div>
+<div class="modal-meta-item"><div class="label">Status</div><div class="value">Completed</div></div></div>
+      <h3>Project Overview</h3>
+      <p>Annual turnaround maintenance across CDU, VDU, and utility sections. Covered piping replacements, corrosion repairs, insulation reinstatement, and valve overhauls within 30 days.</p>
+      <h3>Scope of Work</h3>
+      <ul class="checklist"><li>Piping replacement on corrosion-affected lines</li>
+<li>Valve overhauls and replacements across units</li>
+<li>Insulation removal, repair, and reinstatement</li>
+<li>Inspection support — UT thickness surveys</li>
+<li>Pressure testing of reinstated lines</li>
+<li>Blind management and PTW coordination</li></ul>
+      <div class="modal-gallery"><img src="images/shutdown-1.jpg" alt="shutdown-1"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>shutdown-1.jpg</small></div>'">
+<img src="images/shutdown-2.jpg" alt="shutdown-2"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>shutdown-2.jpg</small></div>'">
+<img src="images/shutdown-3.jpg" alt="shutdown-3"
+             onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'height:160px;flex-direction:column;gap:6px;\'><span>&#128247;</span><small>shutdown-3.jpg</small></div>'">
+</div>
+    </div>
+    <div class="modal-footer"><a href="contact.html" class="btn btn-primary">Enquire About Similar Work</a></div>
+  </div>
+</div><script>
+function openModal(id){
+  var o=document.getElementById("modal-"+id);
+  if(!o)return;
+  o.classList.add("open");
+  document.body.classList.add("modal-open");
+  o.querySelector(".modal").scrollTop=0;
+}
+function closeModal(id){
+  var o=document.getElementById("modal-"+id);
+  if(!o)return;
+  o.classList.remove("open");
+  document.body.classList.remove("modal-open");
+}
+function closeOnOverlay(e){
+  if(e.target===e.currentTarget){
+    e.currentTarget.classList.remove("open");
+    document.body.classList.remove("modal-open");
+  }
+}
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"){
+    document.querySelectorAll(".modal-overlay.open").forEach(function(m){m.classList.remove("open");});
+    document.body.classList.remove("modal-open");
+  }
+});
+</script>
+</body>
+</html>
